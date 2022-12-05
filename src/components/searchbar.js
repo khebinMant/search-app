@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo } from "react";
 import Results from "./results";
+import { InputText } from 'primereact/inputtext';
 
 import styled from "styled-components";
 
@@ -33,12 +34,11 @@ export default function SearchBar({ items, onItemSelected }) {
 
   return (
     <SearchBarContainer>
-      {results && <div>{results.length} results</div>}
-      <StyledInput
+      <InputText
         type={"text"}
         onChange={handleOnChange}
         value={query}
-      ></StyledInput>
+      ></InputText>
 
       <Results
         items={items}
@@ -46,6 +46,7 @@ export default function SearchBar({ items, onItemSelected }) {
         onItemSelected={onItemSelected}
         onResultsCalculated={handleResults}
       />
+      {results && <div>{results.length} results</div>}
     </SearchBarContainer>
   );
 }

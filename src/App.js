@@ -1,7 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 import SearchBar from "./components/searchbar";
+import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext';
 
 import styled from "styled-components";
 
@@ -131,18 +132,18 @@ function App() {
 
   return (
     <div className="App">
-      <StyledButton name="all" onClick={handleClick}>
+      <Button className="p-button-rounded" name="all" onClick={handleClick}>
         Search in All
-      </StyledButton>
-      <StyledButton name="emails" onClick={handleClick}>
+      </Button >
+      <Button className="p-button-rounded p-button-secondary" name="emails" onClick={handleClick}>
         Search in Emails
-      </StyledButton>
-      <StyledButton name="calendar" onClick={handleClick}>
+      </Button >
+      <Button className="p-button-rounded p-button-success"  name="calendar" onClick={handleClick}>
         Search in Calendar
-      </StyledButton>
-      <StyledButton name="people" onClick={handleClick}>
+      </Button >
+      <Button className="p-button-rounded p-button-info" name="people" onClick={handleClick}>
         Search in People
-      </StyledButton>
+      </Button >
       {selection ? <div>You selected: {selection.title}</div> : ""}
       <SearchBar items={data} onItemSelected={handleOnItemSelected} />
     </div>
